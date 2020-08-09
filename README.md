@@ -19,9 +19,10 @@ We recommend that you submit via the classroom workspace on the previous page. H
 Before submitting, check your solution against the Rubric.
 
 ### Files used
-chicago.csv 
+chicago.csv
 new-york-city.csv
 washington.csv
 
 ### Credits
 King Carl Tornam Duho
+Udacity 2020 Team
