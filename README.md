@@ -22,6 +22,7 @@ Before submitting, check your solution against the Rubric.
 chicago.csv
 new-york-city.csv
 washington.csv
+Local R codes which are now uploaded as bikeshare.py
 
 ### Credits
 King Carl Tornam Duho
