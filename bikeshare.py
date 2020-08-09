@@ -49,3 +49,23 @@ table(ny$Gender)
 by(ny$Trip.Duration, ny$Gender, summary)
 
 #Summary of your question 2 results goes here. The graph shows that males have more data as compared to females. However, the counts are concentrated below a trip duration of 2000. Thus, the average duration of females, 876 is higher than that of males, 768.9.
+
+
+
+#Question 3
+#Your question 3 goes here. For Washington, create a qplot of User Type and their respective Trip Durations for durations covering 0 to 25,000. Which user type has a higher average trip duration?
+#The ploting code for answering the question
+qplot(x = User.Type, y = Trip.Duration, data = subset(wash, !is.na(User.Type)),
+      geom = 'boxplot') +
+      coord_cartesian(ylim = c(0, 25000))
+
+
+#To present relevant summary statistics
+table(wash$User.Type)
+by(wash$Trip.Duration, wash$User.Type, summary)
+
+#Summary of your question 3 results goes here.
+
+#In Washington, the results from the plot shows that customers have the higher trip duration. This is corroborated with the finding from the summary table.
+
+system('python -m nbconvert Explore_bikeshare_data.ipynb')
