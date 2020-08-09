@@ -29,3 +29,23 @@ summary(chi$Trip.Duration)
 by(chi$Trip.Duration, chi$Gender, summary)
 
 #Summary of your question 1 results goes here. The result (on Chicago) projects the relationship between the trip duration and the start time, separated based on gender. The data diagram shows the results including the NA which are coloured as yellow. Majority of the NA datasets are results above 5000 trip duration. On avregare, femeles have the higher trip duration in Chicago.
+
+
+#Question 2
+#Your question 2 goes here. Create a hostogram of Trip Duration in Ney York City based on Gender (include NA results also) and limit it to a count of 5,000 Trips. What gender has the highest trip duration?
+# To load ggplot2
+library(ggplot2)
+
+#The ploting code for answering the question
+ggplot(aes(x=Trip.Duration), data=subset(ny, !is.na(Gender)))+
+    geom_histogram(binwidth=10)+
+    ggtitle('Histogram of Trip Durations')+
+    labs(x='Trip Duration')+
+    scale_x_continuous(limits=c(0,5000))+
+    facet_wrap(~Gender)
+
+#To present relevant summary statistics
+table(ny$Gender)
+by(ny$Trip.Duration, ny$Gender, summary)
+
+#Summary of your question 2 results goes here. The graph shows that males have more data as compared to females. However, the counts are concentrated below a trip duration of 2000. Thus, the average duration of females, 876 is higher than that of males, 768.9.
